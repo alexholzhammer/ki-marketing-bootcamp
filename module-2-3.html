@@ -280,13 +280,21 @@ strong { font-weight: 600; }
   .quiz-section { padding: 20px 16px; }
   .section-body { padding: 16px; }
 }
+
+/* ─── MODULE NAV ─── */
+.mod-nav-back, .mod-nav-next { font-size: 12px; font-weight: 500; color: var(--text-muted); text-decoration: none; white-space: nowrap; font-family: 'IBM Plex Mono', monospace; transition: color 0.15s; flex-shrink: 0; }
+.mod-nav-back:hover, .mod-nav-next:hover { color: var(--accent); }
+.mod-nav-indicator { font-size: 11px; color: var(--text-subtle); font-family: 'IBM Plex Mono', monospace; white-space: nowrap; flex-shrink: 0; }
 </style>
 </head>
 <body>
 
 <div id="progress-bar-wrap">
+  <a href="topic-prompting.html" class="mod-nav-back">← Übersicht</a>
   <div id="progress-bar-track"><div id="progress-bar-fill"></div></div>
   <div id="progress-label">0% gelesen</div>
+  <span class="mod-nav-indicator">2.3 / 2.5</span>
+  <a href="module-2-4.html" class="mod-nav-next">Weiter →</a>
 </div>
 
 <div class="container">
