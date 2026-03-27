@@ -1,0 +1,234 @@
+<!DOCTYPE html>
+<html lang="de">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>KI Marketing Bootcamp</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="shared.css">
+<style>
+.topnav-logo-text { font-weight: 600; }
+
+.course-hero {
+  background: #0A1628;
+  color: white;
+  border-radius: var(--radius-lg);
+  padding: 48px 44px;
+  margin-bottom: 32px;
+  position: relative;
+  overflow: hidden;
+  border: 1px solid #1E2D45;
+}
+.course-hero::before {
+  content: '';
+  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
+  background: radial-gradient(ellipse at 80% 50%, rgba(0,82,204,0.12) 0%, transparent 60%);
+  pointer-events: none;
+}
+.course-tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
+  color: #6B9FFF; background: rgba(107,159,255,0.1);
+  border: 1px solid rgba(107,159,255,0.2);
+  padding: 3px 10px; border-radius: var(--radius); margin-bottom: 20px;
+  font-family: 'IBM Plex Mono', monospace;
+}
+.course-hero h1 {
+  font-size: clamp(24px, 3.5vw, 38px);
+  font-weight: 700; letter-spacing: -0.02em;
+  margin-bottom: 12px; line-height: 1.15;
+}
+.course-hero p {
+  color: rgba(255,255,255,0.5); font-size: 15px;
+  max-width: 520px; font-weight: 300; line-height: 1.65;
+}
+.course-hero-meta {
+  display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+  padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07);
+}
+.course-hero-meta-item {
+  display: flex; align-items: center; gap: 7px;
+  font-size: 12px; color: rgba(255,255,255,0.4);
+  font-family: 'IBM Plex Mono', monospace;
+}
+.course-hero-meta-item span { color: rgba(255,255,255,0.75); font-weight: 500; }
+
+.topics-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: 12px;
+}
+
+.topic-card-num {
+  font-family: 'IBM Plex Mono', monospace;
+  font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
+  color: var(--text-subtle); margin-bottom: 12px;
+}
+.topic-card:hover .topic-card-num { color: var(--accent); }
+.topic-card.locked .topic-card-num { color: var(--border-strong); }
+
+@media(max-width: 700px) {
+  .topics-grid { grid-template-columns: 1fr 1fr; }
+  .course-hero { padding: 28px 20px; }
+}
+@media(max-width: 480px) {
+  .topics-grid { grid-template-columns: 1fr; }
+}
+</style>
+</head>
+<body>
+
+<!-- Top Navigation -->
+<nav class="topnav">
+  <a href="index.html" class="topnav-logo">
+    <div class="topnav-logo-dot"></div>
+    <span class="topnav-logo-text">KI Marketing Bootcamp</span>
+  </a>
+  <div class="topnav-spacer"></div>
+</nav>
+
+<div class="container-wide">
+
+  <!-- HERO -->
+  <div class="course-hero">
+    <div class="course-tag">KI Marketing Bootcamp · MVP</div>
+    <h1>Werde zum KI&#8209;Marketing&#8209;Experten</h1>
+    <p>13 Themen. Praxisnahes Wissen. Interaktive Tools. Lerne, wie du KI strategisch und effektiv im Marketing einsetzt — von Prompting bis Automatisierung.</p>
+    <div class="course-hero-meta">
+      <div class="course-hero-meta-item">📚 <span>13 Themen</span></div>
+      <div class="course-hero-meta-item">🎯 <span>50+ Module</span></div>
+      <div class="course-hero-meta-item">⚡ <span>Interaktive Tools</span></div>
+      <div class="course-hero-meta-item">🧠 <span>Quizzes &amp; Tests</span></div>
+    </div>
+  </div>
+
+  <!-- TOPICS -->
+  <div class="section-label">Themen</div>
+
+  <div class="topics-grid">
+
+    <!-- Topic 1: Prompting (AVAILABLE) -->
+    <a href="topic-prompting.html" class="topic-card">
+      <div class="topic-card-num">01</div>
+      <div class="topic-card-icon">✍️</div>
+      <div class="topic-card-label">Verfügbar</div>
+      <div class="topic-card-title">Prompting</div>
+      <div class="topic-card-desc">KI-Modelle präzise steuern. Von Zero-Shot bis Meta-Prompting.</div>
+      <div class="topic-card-badge">5 Module · ~75 Min</div>
+    </a>
+
+    <!-- Topic 2–13: Coming Soon -->
+    <div class="topic-card locked">
+      <div class="topic-card-num">02</div>
+      <div class="topic-card-icon">🎯</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">KI-Strategie</div>
+      <div class="topic-card-desc">KI sinnvoll in die Marketingstrategie integrieren.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">03</div>
+      <div class="topic-card-icon">✍️</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Content Creation</div>
+      <div class="topic-card-desc">Texte, Bilder und Videos mit KI erstellen und optimieren.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">04</div>
+      <div class="topic-card-icon">🔍</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">SEO &amp; KI</div>
+      <div class="topic-card-desc">Suchmaschinenoptimierung im Zeitalter der KI.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">05</div>
+      <div class="topic-card-icon">📣</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Social Media</div>
+      <div class="topic-card-desc">KI-gestützte Social-Media-Strategien und Content-Planung.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">06</div>
+      <div class="topic-card-icon">📧</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">E-Mail Marketing</div>
+      <div class="topic-card-desc">Personalisierte Kampagnen und Automatisierung mit KI.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">07</div>
+      <div class="topic-card-icon">📊</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Analytics &amp; Daten</div>
+      <div class="topic-card-desc">Daten mit KI analysieren und Insights gewinnen.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">08</div>
+      <div class="topic-card-icon">🛒</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">E-Commerce</div>
+      <div class="topic-card-desc">Produktbeschreibungen, Ads und Conversion-Optimierung.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">09</div>
+      <div class="topic-card-icon">🤝</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Kundenservice</div>
+      <div class="topic-card-desc">Chatbots, Automatisierung und KI-gestützter Support.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">10</div>
+      <div class="topic-card-icon">🎥</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Video &amp; Podcast</div>
+      <div class="topic-card-desc">Audio- und Videoinhalte mit KI produzieren und optimieren.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">11</div>
+      <div class="topic-card-icon">⚙️</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">Automatisierung</div>
+      <div class="topic-card-desc">Workflows automatisieren und KI-Tools integrieren.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">12</div>
+      <div class="topic-card-icon">🔒</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">KI-Ethik &amp; Recht</div>
+      <div class="topic-card-desc">DSGVO, Urheberrecht und verantwortungsvoller KI-Einsatz.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+    <div class="topic-card locked">
+      <div class="topic-card-num">13</div>
+      <div class="topic-card-icon">🚀</div>
+      <div class="topic-card-label">Demnächst</div>
+      <div class="topic-card-title">KI-Trends &amp; Zukunft</div>
+      <div class="topic-card-desc">Was kommt als Nächstes? KI-Entwicklungen im Blick behalten.</div>
+      <div class="topic-card-badge">Demnächst</div>
+    </div>
+
+  </div>
+</div>
+
+</body>
+</html>
