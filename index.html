@@ -8,72 +8,125 @@
 <link href="https://fonts.googleapis.com/css2?family=IBM+Plex+Sans:wght@300;400;500;600;700&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
 <link rel="stylesheet" href="shared.css">
 <style>
-.topnav-logo-text { font-weight: 600; }
-
+/* ─── COURSE HERO ─── */
 .course-hero {
-  background: #0A1628;
+  background: #08101F;
   color: white;
   border-radius: var(--radius-lg);
-  padding: 48px 44px;
+  padding: 52px 48px;
   margin-bottom: 32px;
   position: relative;
   overflow: hidden;
-  border: 1px solid #1E2D45;
+  border: 1px solid #1B2B45;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.22);
 }
 .course-hero::before {
   content: '';
-  position: absolute; top: 0; right: 0; bottom: 0; left: 0;
-  background: radial-gradient(ellipse at 80% 50%, rgba(0,82,204,0.12) 0%, transparent 60%);
+  position: absolute; inset: 0;
+  background:
+    radial-gradient(ellipse at 85% 30%, rgba(79,70,229,0.22) 0%, transparent 55%),
+    radial-gradient(ellipse at 15% 80%, rgba(5,150,105,0.10) 0%, transparent 50%);
   pointer-events: none;
 }
 .course-tag {
   display: inline-flex; align-items: center; gap: 6px;
-  font-size: 11px; font-weight: 500; letter-spacing: 0.08em; text-transform: uppercase;
-  color: #6B9FFF; background: rgba(107,159,255,0.1);
-  border: 1px solid rgba(107,159,255,0.2);
-  padding: 3px 10px; border-radius: var(--radius); margin-bottom: 20px;
+  font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
+  color: #A5B4FC; background: rgba(165,180,252,0.12);
+  border: 1px solid rgba(165,180,252,0.2);
+  padding: 4px 12px; border-radius: 999px; margin-bottom: 22px;
   font-family: 'IBM Plex Mono', monospace;
 }
 .course-hero h1 {
-  font-size: clamp(24px, 3.5vw, 38px);
-  font-weight: 700; letter-spacing: -0.02em;
-  margin-bottom: 12px; line-height: 1.15;
+  font-size: clamp(26px, 3.5vw, 42px);
+  font-weight: 700; letter-spacing: -0.025em;
+  margin-bottom: 14px; line-height: 1.1;
 }
 .course-hero p {
-  color: rgba(255,255,255,0.5); font-size: 15px;
-  max-width: 520px; font-weight: 300; line-height: 1.65;
+  color: rgba(255,255,255,0.48); font-size: 15px;
+  max-width: 540px; font-weight: 300; line-height: 1.7;
 }
 .course-hero-meta {
-  display: flex; gap: 24px; margin-top: 32px; flex-wrap: wrap;
+  display: flex; gap: 28px; margin-top: 36px; flex-wrap: wrap;
   padding-top: 24px; border-top: 1px solid rgba(255,255,255,0.07);
 }
 .course-hero-meta-item {
   display: flex; align-items: center; gap: 7px;
-  font-size: 12px; color: rgba(255,255,255,0.4);
+  font-size: 12px; color: rgba(255,255,255,0.38);
   font-family: 'IBM Plex Mono', monospace;
 }
-.course-hero-meta-item span { color: rgba(255,255,255,0.75); font-weight: 500; }
+.course-hero-meta-item span { color: rgba(255,255,255,0.72); font-weight: 500; }
 
-.topics-grid {
+/* ─── BENTO GRID ─── */
+.bento-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: 12px;
+  gap: 14px;
 }
 
+/* Featured card spans 2 columns */
+.topic-card.featured {
+  grid-column: span 2;
+  background: linear-gradient(135deg, #1E1560 0%, #0F0B3A 60%);
+  border-color: rgba(99,102,241,0.35);
+  color: white;
+  padding: 32px;
+  min-height: 240px;
+  position: relative;
+  overflow: hidden;
+}
+.topic-card.featured::before {
+  content: '';
+  position: absolute; inset: 0;
+  background: radial-gradient(ellipse at 85% 30%, rgba(99,102,241,0.25) 0%, transparent 60%);
+  pointer-events: none;
+}
+.topic-card.featured:hover {
+  border-color: rgba(99,102,241,0.6);
+  box-shadow: 0 12px 36px rgba(79,70,229,0.28), 0 2px 8px rgba(79,70,229,0.15);
+  transform: translateY(-2px);
+}
+.topic-card.featured .topic-card-num { color: rgba(165,180,252,0.5); }
+.topic-card.featured .topic-card-icon { font-size: 40px; }
+.topic-card.featured .topic-card-label { color: #A5B4FC; }
+.topic-card.featured .topic-card-title { font-size: 22px; color: white; }
+.topic-card.featured .topic-card-desc { color: rgba(255,255,255,0.55); font-size: 14px; }
+.topic-card.featured .topic-card-badge {
+  background: rgba(165,180,252,0.15);
+  color: #C7D2FE;
+  border: 1px solid rgba(165,180,252,0.25);
+}
+.featured-cta {
+  display: inline-flex; align-items: center; gap: 8px;
+  margin-top: 20px; padding: 10px 18px; border-radius: 999px;
+  background: rgba(255,255,255,0.1); color: rgba(255,255,255,0.9);
+  border: 1px solid rgba(255,255,255,0.15);
+  font-size: 13px; font-weight: 500;
+  transition: all 0.2s; align-self: flex-start;
+  text-decoration: none;
+}
+.topic-card.featured:hover .featured-cta {
+  background: rgba(255,255,255,0.16);
+  border-color: rgba(255,255,255,0.25);
+}
+
+/* Topic card number label */
 .topic-card-num {
   font-family: 'IBM Plex Mono', monospace;
   font-size: 10px; font-weight: 500; letter-spacing: 0.06em;
-  color: var(--text-subtle); margin-bottom: 12px;
+  color: var(--text-subtle); margin-bottom: 4px;
 }
 .topic-card:hover .topic-card-num { color: var(--accent); }
 .topic-card.locked .topic-card-num { color: var(--border-strong); }
+.topic-card.featured .topic-card-num { margin-bottom: 12px; }
 
-@media(max-width: 700px) {
-  .topics-grid { grid-template-columns: 1fr 1fr; }
-  .course-hero { padding: 28px 20px; }
+@media(max-width: 760px) {
+  .bento-grid { grid-template-columns: 1fr 1fr; }
+  .topic-card.featured { grid-column: span 2; min-height: 200px; padding: 24px; }
+  .course-hero { padding: 32px 24px; }
 }
 @media(max-width: 480px) {
-  .topics-grid { grid-template-columns: 1fr; }
+  .bento-grid { grid-template-columns: 1fr; }
+  .topic-card.featured { grid-column: span 1; }
 }
 </style>
 </head>
@@ -83,7 +136,7 @@
 <nav class="topnav">
   <a href="index.html" class="topnav-logo">
     <div class="topnav-logo-dot"></div>
-    <span class="topnav-logo-text">KI Marketing Bootcamp</span>
+    <span style="font-weight:600">KI Marketing Bootcamp</span>
   </a>
   <div class="topnav-spacer"></div>
 </nav>
@@ -103,22 +156,23 @@
     </div>
   </div>
 
-  <!-- TOPICS -->
+  <!-- TOPICS BENTO GRID -->
   <div class="section-label">Themen</div>
 
-  <div class="topics-grid">
+  <div class="bento-grid">
 
-    <!-- Topic 1: Prompting (AVAILABLE) -->
-    <a href="topic-prompting.html" class="topic-card">
+    <!-- Topic 01: Prompting — FEATURED (2-col) -->
+    <a href="topic-prompting.html" class="topic-card featured">
       <div class="topic-card-num">01</div>
       <div class="topic-card-icon">✍️</div>
-      <div class="topic-card-label">Verfügbar</div>
+      <div class="topic-card-label">Jetzt verfügbar</div>
       <div class="topic-card-title">Prompting</div>
-      <div class="topic-card-desc">KI-Modelle präzise steuern. Von Zero-Shot bis Meta-Prompting.</div>
+      <div class="topic-card-desc">Lerne, KI-Modelle präzise zu steuern. Von technischen Grundlagen bis zu fortgeschrittenen Frameworks wie CRAFT, PACT und Meta-Prompting.</div>
       <div class="topic-card-badge">5 Module · ~75 Min</div>
+      <div class="featured-cta">Jetzt starten →</div>
     </a>
 
-    <!-- Topic 2–13: Coming Soon -->
+    <!-- Topic 02 -->
     <div class="topic-card locked">
       <div class="topic-card-num">02</div>
       <div class="topic-card-icon">🎯</div>
@@ -128,6 +182,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 03 -->
     <div class="topic-card locked">
       <div class="topic-card-num">03</div>
       <div class="topic-card-icon">✍️</div>
@@ -137,6 +192,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 04 -->
     <div class="topic-card locked">
       <div class="topic-card-num">04</div>
       <div class="topic-card-icon">🔍</div>
@@ -146,6 +202,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 05 -->
     <div class="topic-card locked">
       <div class="topic-card-num">05</div>
       <div class="topic-card-icon">📣</div>
@@ -155,6 +212,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 06 -->
     <div class="topic-card locked">
       <div class="topic-card-num">06</div>
       <div class="topic-card-icon">📧</div>
@@ -164,6 +222,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 07 -->
     <div class="topic-card locked">
       <div class="topic-card-num">07</div>
       <div class="topic-card-icon">📊</div>
@@ -173,6 +232,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 08 -->
     <div class="topic-card locked">
       <div class="topic-card-num">08</div>
       <div class="topic-card-icon">🛒</div>
@@ -182,6 +242,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 09 -->
     <div class="topic-card locked">
       <div class="topic-card-num">09</div>
       <div class="topic-card-icon">🤝</div>
@@ -191,6 +252,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 10 -->
     <div class="topic-card locked">
       <div class="topic-card-num">10</div>
       <div class="topic-card-icon">🎥</div>
@@ -200,6 +262,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 11 -->
     <div class="topic-card locked">
       <div class="topic-card-num">11</div>
       <div class="topic-card-icon">⚙️</div>
@@ -209,6 +272,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 12 -->
     <div class="topic-card locked">
       <div class="topic-card-num">12</div>
       <div class="topic-card-icon">🔒</div>
@@ -218,6 +282,7 @@
       <div class="topic-card-badge">Demnächst</div>
     </div>
 
+    <!-- Topic 13 -->
     <div class="topic-card locked">
       <div class="topic-card-num">13</div>
       <div class="topic-card-icon">🚀</div>
