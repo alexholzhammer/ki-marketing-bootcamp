@@ -215,8 +215,7 @@ a:hover { text-decoration: underline; }
 }
 .tooltip-popup {
   display: none;
-  position: absolute; bottom: calc(100% + 6px); left: 50%;
-  transform: translateX(-50%);
+  position: fixed; top: 0; left: 0;
   background: #0E0D0C; color: rgba(255,255,255,0.85);
   font-size: 12px; line-height: 1.55;
   padding: 9px 13px; border-radius: var(--radius);
@@ -227,12 +226,11 @@ a:hover { text-decoration: underline; }
 }
 .tooltip-popup::after {
   content: '';
-  position: absolute; top: 100%; left: 50%;
+  position: absolute; top: 100%; left: var(--arrow-offset, 50%);
   transform: translateX(-50%);
   border: 5px solid transparent;
   border-top-color: #0E0D0C;
 }
-.tooltip-word:hover .tooltip-popup { display: block; }
 
 /* ─── TABLE ─── */
 .table-wrap { overflow-x: auto; border-radius: var(--radius); border: 1px solid var(--border); margin: 14px 0; }
