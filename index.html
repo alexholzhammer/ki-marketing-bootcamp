@@ -24,15 +24,15 @@
   content: '';
   position: absolute; inset: 0;
   background:
-    radial-gradient(ellipse at 85% 30%, rgba(255,72,0,0.14) 0%, transparent 55%),
+    radial-gradient(ellipse at 85% 30%, rgba(26,111,255,0.14) 0%, transparent 55%),
     radial-gradient(ellipse at 15% 80%, rgba(0,194,168,0.10) 0%, transparent 50%);
   pointer-events: none;
 }
 .course-tag {
   display: inline-flex; align-items: center; gap: 6px;
   font-size: 11px; font-weight: 500; letter-spacing: 0.06em; text-transform: uppercase;
-  color: #FFAA80; background: rgba(255,168,128,0.12);
-  border: 1px solid rgba(255,168,128,0.22);
+  color: #80AAFF; background: rgba(128,170,255,0.12);
+  border: 1px solid rgba(128,170,255,0.22);
   padding: 4px 12px; border-radius: 999px; margin-bottom: 22px;
   font-family: 'JetBrains Mono', monospace;
 }
@@ -66,8 +66,8 @@
 /* Featured card spans 2 columns */
 .topic-card.featured {
   grid-column: span 2;
-  background: linear-gradient(135deg, #1A100A 0%, #0E0D0C 60%);
-  border-color: rgba(255,72,0,0.30);
+  background: linear-gradient(135deg, #0A0C1A 0%, #0E0D0C 60%);
+  border-color: rgba(26,111,255,0.30);
   color: white;
   padding: 32px;
   min-height: 240px;
@@ -77,23 +77,23 @@
 .topic-card.featured::before {
   content: '';
   position: absolute; inset: 0;
-  background: radial-gradient(ellipse at 85% 30%, rgba(255,72,0,0.20) 0%, transparent 60%);
+  background: radial-gradient(ellipse at 85% 30%, rgba(26,111,255,0.20) 0%, transparent 60%);
   pointer-events: none;
 }
 .topic-card.featured:hover {
-  border-color: rgba(255,72,0,0.55);
-  box-shadow: 0 12px 36px rgba(255,72,0,0.25), 0 2px 8px rgba(255,72,0,0.10);
+  border-color: rgba(26,111,255,0.55);
+  box-shadow: 0 12px 36px rgba(26,111,255,0.25), 0 2px 8px rgba(26,111,255,0.10);
   transform: translateY(-2px);
 }
-.topic-card.featured .topic-card-num { color: rgba(255,168,128,0.5); }
+.topic-card.featured .topic-card-num { color: rgba(128,170,255,0.5); }
 .topic-card.featured .topic-card-icon { font-size: 40px; }
-.topic-card.featured .topic-card-label { color: #FFAA80; }
+.topic-card.featured .topic-card-label { color: #80AAFF; }
 .topic-card.featured .topic-card-title { font-size: 22px; color: white; }
 .topic-card.featured .topic-card-desc { color: rgba(255,255,255,0.55); font-size: 14px; }
 .topic-card.featured .topic-card-badge {
-  background: rgba(255,168,128,0.15);
-  color: #FFCFBD;
-  border: 1px solid rgba(255,168,128,0.25);
+  background: rgba(128,170,255,0.15);
+  color: #B8D1FF;
+  border: 1px solid rgba(128,170,255,0.25);
 }
 .featured-cta {
   display: inline-flex; align-items: center; gap: 8px;
