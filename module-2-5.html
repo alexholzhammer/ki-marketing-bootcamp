@@ -1023,23 +1023,24 @@ function restartQuiz() {
 
 renderQuestion();
 
-// ─── TOOLTIP EDGE DETECTION ─────────────────
+// ─── TOOLTIP POSITIONING ─────────────────────
 document.querySelectorAll('.tooltip-word').forEach(function(el) {
   var popup = el.querySelector('.tooltip-popup');
   if (!popup) return;
   el.addEventListener('mouseenter', function() {
-    setTimeout(function() {
-      popup.style.transform = 'translateX(-50%)';
-      var rect = popup.getBoundingClientRect();
-      var vw = window.innerWidth || document.documentElement.clientWidth;
-      if (rect.left < 8) {
-        popup.style.transform = 'translateX(calc(-50% + ' + Math.ceil(8 - rect.left) + 'px))';
-      } else if (rect.right > vw - 8) {
-        popup.style.transform = 'translateX(calc(-50% - ' + Math.ceil(rect.right - vw + 8) + 'px))';
-      }
-    }, 0);
+    popup.style.display = 'block';
+    var triggerRect = el.getBoundingClientRect();
+    var vw = window.innerWidth || document.documentElement.clientWidth;
+    var popupW = popup.offsetWidth;
+    var popupH = popup.offsetHeight;
+    var triggerCenterX = triggerRect.left + triggerRect.width / 2;
+    var rawLeft = triggerCenterX - popupW / 2;
+    var clampedLeft = Math.max(8, Math.min(rawLeft, vw - popupW - 8));
+    popup.style.left = clampedLeft + 'px';
+    popup.style.top = (triggerRect.top - popupH - 6) + 'px';
+    popup.style.setProperty('--arrow-offset', (triggerCenterX - clampedLeft) + 'px');
   });
-  el.addEventListener('mouseleave', function() { popup.style.transform = ''; });
+  el.addEventListener('mouseleave', function() { popup.style.display = 'none'; });
 });
 </script>
 </body>
